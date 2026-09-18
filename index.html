@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -672,7 +672,6 @@
         'foot-links': 'প্রয়োজনীয় লিঙ্ক',
         'foot-honors': 'স্বীকৃতি ও উপাধি',
         'foot-contact': 'যোগাযোগ ও চেম্বার',
-        // Newly added keys for remaining elements:
         'title-1': 'বিদ্যাভূষণ',
         'title-2': 'বাস্তুভূষণ',
         'title-3': 'জ্যোতিষ ভারতী',
@@ -753,7 +752,6 @@
         'foot-links': 'Quick Navigation',
         'foot-honors': 'Titles & Honors',
         'foot-contact': 'Contact & Chambers',
-        // Newly added keys for remaining elements translated to English:
         'title-1': 'Vidyabhushan',
         'title-2': 'Vastubhushan',
         'title-3': 'Jyotish Bharati',
@@ -778,6 +776,7 @@
     // Toggle Language Function
     function toggleLanguage() {
       currentLang = currentLang === 'bn' ? 'en' : 'bn';
+      document.documentElement.lang = currentLang;
       document.getElementById('langDisplay').innerText = currentLang === 'bn' ? 'English' : 'বাংলা';
       
       const elements = document.querySelectorAll('[data-lang]');
@@ -804,6 +803,9 @@
       }
       lucide.createIcons();
     }
+
+    // Initialize default language to English when the page loads
+    toggleLanguage();
   </script>
 </body>
 </html>
