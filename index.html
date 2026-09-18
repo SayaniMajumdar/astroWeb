@@ -134,17 +134,16 @@
       </div>
     </div>
 
-    <!-- Improved Mobile Drawer (Absolute position for smooth overlap) -->
+    <!-- Improved Mobile Drawer -->
     <div id="mobileMenu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-maroon-950 border-b-2 border-gold-600 shadow-2xl">
       <nav class="flex flex-col px-6 py-6 space-y-5">
         <a href="#about" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-about">আচার্য পরিচিতি</a>
         <a href="#services" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-services">সেবাসমূহ</a>
         <a href="#kundali" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-kundali">হস্তনির্মিত কোষ্ঠী ও ঠিকুজি</a>
         
-        <!-- Mobile Contact (WhatsApp Removed) -->
         <div class="pt-2">
           <a href="tel:+919830000000" class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-gold-600/20 text-gold-400 border border-gold-600/40 font-bold text-sm">
-            <i data-lucide="phone" class="w-5 h-5"></i> কল করুন: +91 98300 00000
+            <i data-lucide="phone" class="w-5 h-5"></i> <span data-lang="mob-call">কল করুন: +91 98300 00000</span>
           </a>
         </div>
       </nav>
@@ -164,7 +163,7 @@
         <span data-lang="hero-badge">১৮+ বৎসরের দীর্ঘ অভিজ্ঞতা ও বৈদিক জ্যোতিষ সাধনা | প্রতিষ্ঠা: জানুয়ারী ২০২৫</span>
       </div>
 
-      <!-- MAIN PROMINENT BENGALI HEADLINE -->
+      <!-- MAIN PROMINENT BENGALI HEADLINE (Intentionally not translated) -->
       <div class="p-4 sm:p-8 rounded-2xl bg-black/30 border border-gold-500/40 backdrop-blur-sm max-w-4xl mx-auto mb-8 shadow-2xl">
         <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold font-bengali-heading text-gold-400 tracking-normal sm:tracking-wide drop-shadow-md leading-tight mb-3">
           গ্রহার্চ্চনা জ্যোতির্ভবন
@@ -238,7 +237,6 @@
         
         <div class="grid grid-cols-1 gap-8 items-center">
           
-          <!-- Academic, Shastra & Accolades Breakdown -->
           <div class="space-y-6">
             
             <!-- Education Box -->
@@ -293,11 +291,11 @@
                 <span data-lang="titles-heading">গৌরবান্বিত উপাধি সমূহ (Conferred Titles):</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm">বিদ্যাভূষণ</span>
-                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm">বাস্তুভূষণ</span>
-                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm">জ্যোতিষ ভারতী</span>
-                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm">জ্যোতিষ শাস্ত্রী</span>
-                <span class="px-3 py-1 bg-gradient-to-r from-gold-500 to-amber-400 text-maroon-950 rounded-full text-xs sm:text-sm font-extrabold shadow">জ্যোতিষ মহামহোপাধ্যায়</span>
+                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-1">বিদ্যাভূষণ</span>
+                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-2">বাস্তুভূষণ</span>
+                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-3">জ্যোতিষ ভারতী</span>
+                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-4">জ্যোতিষ শাস্ত্রী</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-gold-500 to-amber-400 text-maroon-950 rounded-full text-xs sm:text-sm font-extrabold shadow" data-lang="title-5">জ্যোতিষ মহামহোপাধ্যায়</span>
               </div>
             </div>
 
@@ -350,7 +348,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Service 1: Hand-crafted Kundali -->
+        <!-- Service 1 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="scroll-text" class="w-7 h-7"></i>
@@ -366,7 +364,7 @@
           </a>
         </div>
 
-        <!-- Service 2: Palmistry -->
+        <!-- Service 2 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="hand-metal" class="w-7 h-7"></i>
@@ -379,7 +377,7 @@
           </p>
         </div>
 
-        <!-- Service 3: Vastu Shastra -->
+        <!-- Service 3 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="compass" class="w-7 h-7"></i>
@@ -392,7 +390,7 @@
           </p>
         </div>
 
-        <!-- Service 4: Tantra & Graha Shanti -->
+        <!-- Service 4 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="flame" class="w-7 h-7"></i>
@@ -405,7 +403,7 @@
           </p>
         </div>
 
-        <!-- Service 5: Child Counseling -->
+        <!-- Service 5 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="smile" class="w-7 h-7"></i>
@@ -418,7 +416,7 @@
           </p>
         </div>
 
-        <!-- Service 6: Pourohitya -->
+        <!-- Service 6 -->
         <div class="bg-white rounded-2xl p-7 border border-gold-300/80 shadow-lg hover:shadow-2xl hover:border-gold-500 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 border border-gold-400 flex items-center justify-center text-maroon-900 mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="sparkle" class="w-7 h-7"></i>
@@ -454,7 +452,6 @@
             বর্তমানে বেশিরভাগ কোষ্ঠী জেনেরিক সফটওয়্যারে মুদ্রিত হয়, যার অনেক ক্ষেত্রে অক্ষাংশ-দ্রাঘিমাংশ ও স্থানীয় সূর্যোদয়ের সূক্ষ্ম বিচ্যুতি থাকে। আচার্য স্বয়ং <strong>দৃক সিদ্ধান্ত ও প্রাচীন পঞ্চাঙ্গ মতে নিজ হাতে কলমে প্রতিটি কোষ্ঠী রচনা করেন</strong>, যা ১০০% নির্ভুল ও আজীবন সংরক্ষণের উপযোগী।
           </p>
 
-          <!-- Advantages list -->
           <ul class="space-y-3 text-sm text-parchment-100">
             <li class="flex items-center gap-3">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 flex-shrink-0"></i>
@@ -480,25 +477,24 @@
           <div class="w-full max-w-md bg-maroon-900/90 rounded-3xl p-6 border-2 border-gold-400 shadow-2xl relative">
             <div class="text-center pb-4 border-b border-gold-600/40">
               <span class="text-xs uppercase font-cinzel text-gold-400 tracking-widest" data-lang="sample-title">নমুনা হস্তনির্মিত চক্র</span>
-              <h3 class="text-xl font-bold font-bengali-heading text-gold-200 mt-1">শ্রী শ্রী গ্রহ চক্র ও রাশী কুন্ডলী</h3>
+              <h3 class="text-xl font-bold font-bengali-heading text-gold-200 mt-1" data-lang="k-graphic-title">শ্রী শ্রী গ্রহ চক্র ও রাশী কুন্ডলী</h3>
             </div>
 
             <!-- Traditional Vedic Kundali Graphic Layout -->
             <div class="my-6 aspect-square w-full max-w-[280px] mx-auto border-2 border-gold-500 relative bg-maroon-950/80 shadow-inner">
-              <!-- Diagonal Lines -->
               <svg class="absolute inset-0 w-full h-full text-gold-500/80" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" stroke-width="1"/>
                 <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" stroke-width="1"/>
                 <polygon points="50,0 100,50 50,100 0,50" fill="none" stroke="currentColor" stroke-width="1"/>
               </svg>
               <!-- Traditional Bengali Planet labels -->
-              <div class="absolute top-2 left-1/2 -translate-x-1/2 text-[11px] font-bold text-amber-200">১ম লগ্ন</div>
-              <div class="absolute top-8 left-6 text-[10px] text-amber-300">রবি / বুধ</div>
-              <div class="absolute top-8 right-6 text-[10px] text-amber-300">বৃহস্পতি</div>
-              <div class="absolute bottom-8 left-6 text-[10px] text-amber-300">শুক্র / চন্দ্র</div>
-              <div class="absolute bottom-8 right-6 text-[10px] text-amber-300">মঙ্গল / শনি</div>
+              <div class="absolute top-2 left-1/2 -translate-x-1/2 text-[11px] font-bold text-amber-200" data-lang="k-box-1">১ম লগ্ন</div>
+              <div class="absolute top-8 left-6 text-[10px] text-amber-300" data-lang="k-box-2">রবি / বুধ</div>
+              <div class="absolute top-8 right-6 text-[10px] text-amber-300" data-lang="k-box-3">বৃহস্পতি</div>
+              <div class="absolute bottom-8 left-6 text-[10px] text-amber-300" data-lang="k-box-4">শুক্র / চন্দ্র</div>
+              <div class="absolute bottom-8 right-6 text-[10px] text-amber-300" data-lang="k-box-5">মঙ্গল / শনি</div>
               <div class="absolute inset-0 flex items-center justify-center">
-                <span class="text-xs font-bengali-heading font-extrabold text-gold-400 bg-maroon-950 px-2 py-1 border border-gold-600 rounded">
+                <span class="text-xs font-bengali-heading font-extrabold text-gold-400 bg-maroon-950 px-2 py-1 border border-gold-600 rounded" data-lang="k-box-tag">
                   হস্তলিখিত
                 </span>
               </div>
@@ -510,7 +506,7 @@
                 <i data-lucide="badge-check" class="w-5 h-5 text-gold-400"></i>
                 <span data-lang="seal-text">আচার্য্যের নিজ হস্তাক্ষর ও স্বাক্ষরযুক্ত</span>
               </div>
-              <span class="text-gold-400 font-bold">১০০% গ্যারান্টি</span>
+              <span class="text-gold-400 font-bold" data-lang="k-guarantee">১০০% গ্যারান্টি</span>
             </div>
           </div>
         </div>
@@ -545,8 +541,8 @@
         <div class="space-y-3">
           <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-cinzel" data-lang="foot-links">প্রয়োজনীয় লিঙ্ক</h4>
           <ul class="space-y-2 text-xs text-parchment-200">
-            <li><a href="#about" class="hover:text-gold-400 transition">আচার্য পরিচিতি ও উপাধিসমূহ</a></li>
-            <li><a href="#kundali" class="hover:text-gold-400 transition">হাতে তৈরি কোষ্ঠী ও ঠিকুজি</a></li>
+            <li><a href="#about" class="hover:text-gold-400 transition" data-lang="nav-about">আচার্য পরিচিতি ও উপাধিসমূহ</a></li>
+            <li><a href="#kundali" class="hover:text-gold-400 transition" data-lang="nav-kundali">হাতে তৈরি কোষ্ঠী ও ঠিকুজি</a></li>
           </ul>
         </div>
 
@@ -554,25 +550,25 @@
         <div class="space-y-3">
           <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-cinzel" data-lang="foot-honors">স্বীকৃতি ও উপাধি</h4>
           <div class="flex flex-wrap gap-1.5 text-[11px]">
-            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300">বিদ্যাভূষণ</span>
-            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300">বাস্তুভূষণ</span>
-            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300">জ্যোতিষ ভারতী</span>
-            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300">জ্যোতিষ শাস্ত্রী</span>
-            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300">জ্যোতিষ মহামহোপাধ্যায়</span>
-            <span class="px-2 py-1 bg-gold-600/30 border border-gold-500 rounded text-gold-200 font-bold">জ্যোতিষ পদ্মশ্রী</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-1">বিদ্যাভূষণ</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-2">বাস্তুভূষণ</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-3">জ্যোতিষ ভারতী</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-4">জ্যোতিষ শাস্ত্রী</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-5">জ্যোতিষ মহামহোপাধ্যায়</span>
+            <span class="px-2 py-1 bg-gold-600/30 border border-gold-500 rounded text-gold-200 font-bold" data-lang="title-6">জ্যোতিষ পদ্মশ্রী</span>
           </div>
-          <p class="text-[11px] text-parchment-300/80 pt-1">
+          <p class="text-[11px] text-parchment-300/80 pt-1" data-lang="foot-award-sub">
             কাজী নজরুল ইসলাম স্মৃতি সম্মান (আন্তর্জাতিক আমার ভারত পত্রিকা কোলকাতা)
           </p>
         </div>
 
-        <!-- Contact & Chamber (WhatsApp Removed) -->
+        <!-- Contact -->
         <div class="space-y-3">
           <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-cinzel" data-lang="foot-contact">যোগাযোগ ও চেম্বার</h4>
           <div class="space-y-2 text-xs text-parchment-200">
             <div class="flex items-start gap-2">
               <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5"></i>
-              <span>গ্রহার্চ্চনা জ্যোতির্ভবন মূল চেম্বার, কলকাতা ও হাওড়া অঞ্চল, পশ্চিমবঙ্গ (অনলাইন পরামর্শও উপলব্ধ)</span>
+              <span data-lang="foot-address">গ্রহার্চ্চনা জ্যোতির্ভবন মূল চেম্বার, কলকাতা ও হাওড়া অঞ্চল, পশ্চিমবঙ্গ (অনলাইন পরামর্শও উপলব্ধ)</span>
             </div>
             <div class="flex items-center gap-2">
               <i data-lucide="phone" class="w-4 h-4 text-gold-400 flex-shrink-0"></i>
@@ -589,8 +585,8 @@
 
       <!-- Copyright Bar -->
       <div class="pt-8 text-center text-xs text-parchment-300/70">
-        <p>
-          &copy; ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।
+        <p data-lang="foot-copy">
+          © ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।
         </p>
         <p class="mt-1 font-cinzel text-[10px] text-gold-500/80">
           WWW.GRAHARCHHANAJYOTIRBHAVAN.COM &bull; 100% AUTHENTIC VEDIC RESEARCH
@@ -599,7 +595,7 @@
     </div>
   </footer>
 
-  <!-- Floating Call Button Only (WhatsApp Floating Button Removed) -->
+  <!-- Floating Call Button -->
   <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
     <a href="tel:+919830000000" class="w-14 h-14 rounded-full bg-maroon-900 border-2 border-gold-400 text-gold-300 flex items-center justify-center shadow-2xl hover:scale-110 transition duration-200" title="Call Chamber">
       <i data-lucide="phone-call" class="w-6 h-6"></i>
@@ -611,7 +607,7 @@
     lucide.createIcons();
 
     // State Variables
-    let currentLang = 'bn'; // 'bn' for Bengali, 'en' for English
+    let currentLang = 'bn'; 
 
     // Bilingual Content Dictionary
     const i18n = {
@@ -675,7 +671,26 @@
         'foot-desc': 'জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র (প্রতিষ্ঠা: জানুয়ারি ২০২৫)। ১৮ বৎসরের অভিজ্ঞতায় হস্তনির্মিত নিখুঁত কোষ্ঠী, বাস্তু বিচার ও বৈদিক জ্যোতিষ সমাধান।',
         'foot-links': 'প্রয়োজনীয় লিঙ্ক',
         'foot-honors': 'স্বীকৃতি ও উপাধি',
-        'foot-contact': 'যোগাযোগ ও চেম্বার'
+        'foot-contact': 'যোগাযোগ ও চেম্বার',
+        // Newly added keys for remaining elements:
+        'title-1': 'বিদ্যাভূষণ',
+        'title-2': 'বাস্তুভূষণ',
+        'title-3': 'জ্যোতিষ ভারতী',
+        'title-4': 'জ্যোতিষ শাস্ত্রী',
+        'title-5': 'জ্যোতিষ মহামহোপাধ্যায়',
+        'title-6': 'জ্যোতিষ পদ্মশ্রী',
+        'k-graphic-title': 'শ্রী শ্রী গ্রহ চক্র ও রাশী কুন্ডলী',
+        'k-box-1': '১ম লগ্ন',
+        'k-box-2': 'রবি / বুধ',
+        'k-box-3': 'বৃহস্পতি',
+        'k-box-4': 'শুক্র / চন্দ্র',
+        'k-box-5': 'মঙ্গল / শনি',
+        'k-box-tag': 'হস্তলিখিত',
+        'k-guarantee': '১০০% গ্যারান্টি',
+        'foot-address': 'গ্রহার্চ্চনা জ্যোতির্ভবন মূল চেম্বার, কলকাতা ও হাওড়া অঞ্চল, পশ্চিমবঙ্গ (অনলাইন পরামর্শও উপলব্ধ)',
+        'foot-award-sub': 'কাজী নজরুল ইসলাম স্মৃতি সম্মান (আন্তর্জাতিক আমার ভারত পত্রিকা কোলকাতা)',
+        'foot-copy': '© ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।',
+        'mob-call': 'কল করুন: +91 98300 00000'
       },
       en: {
         'nav-about': 'About Acharya',
@@ -737,7 +752,26 @@
         'foot-desc': 'Astrology Education & Research Center (Estd. January 2025). 18+ Years of Vedic experience in handwritten horoscopes, Vastu, and spiritual counseling.',
         'foot-links': 'Quick Navigation',
         'foot-honors': 'Titles & Honors',
-        'foot-contact': 'Contact & Chambers'
+        'foot-contact': 'Contact & Chambers',
+        // Newly added keys for remaining elements translated to English:
+        'title-1': 'Vidyabhushan',
+        'title-2': 'Vastubhushan',
+        'title-3': 'Jyotish Bharati',
+        'title-4': 'Jyotish Shastri',
+        'title-5': 'Jyotish Mahamahopadhyay',
+        'title-6': 'Jyotish Padmashree',
+        'k-graphic-title': 'Sri Sri Graha Chakra & Rashi Kundali',
+        'k-box-1': '1st Lagna',
+        'k-box-2': 'Sun / Mercury',
+        'k-box-3': 'Jupiter',
+        'k-box-4': 'Venus / Moon',
+        'k-box-5': 'Mars / Saturn',
+        'k-box-tag': 'Hand-drawn',
+        'k-guarantee': '100% Guarantee',
+        'foot-address': 'Main Chamber: Graharchhana Jyotirbhavan, Kolkata & Howrah Region, WB (Online Consultation Available)',
+        'foot-award-sub': 'Kazi Nazrul Islam Smriti Samman (Intl. Amar Bharat Patrika, Kolkata)',
+        'foot-copy': '© 2025-2026 Graharchhana Jyotirbhavan (Astrology Education & Research Center). All Rights Reserved.',
+        'mob-call': 'Call: +91 98300 00000'
       }
     };
 
