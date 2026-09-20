@@ -93,15 +93,16 @@
         
         <!-- Logo Brand (Left side) -->
         <a href="#hero" class="flex items-center space-x-3 group">
-          <div class="w-12 h-12 rounded-full border-2 border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 shadow-md transform group-hover:rotate-12 transition-transform duration-300">
+          <div class="w-12 h-12 rounded-full border-2 border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 shadow-md transform group-hover:rotate-12 transition-transform duration-300 overflow-hidden">
+            <!-- Default Icon (Client hasn't provided a logo yet) -->
             <i data-lucide="sun" class="w-7 h-7 animate-spin-slow"></i>
           </div>
           <div>
             <span class="block text-lg sm:text-2xl font-bold font-bengali-heading text-gold-400 tracking-wide drop-shadow" data-lang="logo-text">
               গ্রহার্চ্চনা জ্যোতির্ভবন
             </span>
-            <span class="block text-[10px] sm:text-xs font-cinzel text-amber-200/90 tracking-widest uppercase">
-              Graharchhana Jyotirbhavan
+            <span class="block text-[10px] sm:text-[11px] font-cinzel text-amber-200/90 tracking-widest uppercase" data-lang="logo-subtext">
+              জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র
             </span>
           </div>
         </a>
@@ -110,9 +111,10 @@
         <div class="flex items-center space-x-6 lg:space-x-8">
           
           <!-- Desktop Navigation -->
-          <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-parchment-100">
+          <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-parchment-100">
             <a href="#about" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-about">আচার্য্য পরিচিতি</a>
             <a href="#services" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-services">সেবাসমূহ</a>
+            <a href="#courses" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-courses">কোর্সসমূহ</a>
             <a href="#kundali" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-kundali">হস্তনির্মিত কোষ্ঠী</a>
           </nav>
 
@@ -139,6 +141,7 @@
       <nav class="flex flex-col px-6 py-6 space-y-5">
         <a href="#about" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-about">আচার্য্য পরিচিতি</a>
         <a href="#services" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-services">সেবাসমূহ</a>
+        <a href="#courses" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-courses">কোর্সসমূহ</a>
         <a href="#kundali" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-kundali">হস্তনির্মিত কোষ্ঠী ও ঠিকুজি</a>
         
         <div class="pt-2">
@@ -296,7 +299,17 @@
                 <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-3">জ্যোতিষ ভারতী</span>
                 <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-4">জ্যোতিষ শাস্ত্রী</span>
                 <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-5">জ্যোতিষ মহামহোপাধ্যায়</span>
+                <span class="px-3 py-1 bg-amber-100 text-maroon-950 border border-gold-500 rounded-full text-xs sm:text-sm font-bold shadow-sm" data-lang="title-7">বাস্তু বিশারদ</span>
               </div>
+            </div>
+
+            <!-- Fellow Member -->
+            <div>
+              <div class="flex items-center gap-2 text-maroon-900 font-bold text-base mb-1">
+                <i data-lucide="users" class="w-4 h-4 text-gold-600"></i>
+                <span data-lang="fellow-title">ফেলো মেম্বার (Fellow Member):</span>
+              </div>
+              <p class="text-gray-800 text-sm font-semibold ml-6" data-lang="fellow-org">Astrological Research Project</p>
             </div>
 
             <!-- Awards (পুরস্কার) -->
@@ -503,7 +516,101 @@
     </div>
   </section>
 
-  <section id="kundali" class="py-20 maroon-gradient text-parchment-100 relative overflow-hidden border-y-4 border-gold-600">
+  <!-- Courses Section Added Here -->
+  <section id="courses" class="py-20 bg-white border-y-2 border-gold-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-bengali-heading text-maroon-950" data-lang="course-heading">
+          জ্যোতিষ, হস্তরেখা ও বাস্তু শিক্ষা
+        </h2>
+        <div class="w-24 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+        <p class="mt-4 text-gray-700 font-garamond text-lg font-semibold" data-lang="course-sub">
+          ছাত্র-ছাত্রীদের জন্য বিশেষ প্রশিক্ষণ (Astrology Courses Details)
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Course 1 -->
+        <div class="bg-parchment-50 rounded-2xl border border-gold-300 p-6 shadow-md hover:shadow-xl transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+          <h3 class="text-xl font-bold font-bengali-heading text-maroon-900 mb-4 border-b border-gold-300 pb-3" data-lang="c1-title">
+            ১. জ্যোতিষ বিষয়ক কোর্স
+          </h3>
+          <ul class="space-y-4">
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-basic">বেসিক কোর্স (৩ মাস, সপ্তাহে ২ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-basic-fee">ফিস: ৩০০০ টাকা</p>
+            </li>
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-dip">ডিপ্লোমা কোর্স (৬ মাস, সপ্তাহে ৩ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-dip-fee">ফিস: ১২০০০ টাকা</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-parchment-50 rounded-2xl border border-gold-300 p-6 shadow-md hover:shadow-xl transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+          <h3 class="text-xl font-bold font-bengali-heading text-maroon-900 mb-4 border-b border-gold-300 pb-3" data-lang="c2-title">
+            ২. হস্তরেখা বিষয়ক কোর্স
+          </h3>
+          <ul class="space-y-4">
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-basic">বেসিক কোর্স (৩ মাস, সপ্তাহে ২ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-basic-fee">ফিস: ৩০০০ টাকা</p>
+            </li>
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-dip">ডিপ্লোমা কোর্স (৬ মাস, সপ্তাহে ৩ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-dip-fee">ফিস: ১২০০০ টাকা</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="bg-parchment-50 rounded-2xl border border-gold-300 p-6 shadow-md hover:shadow-xl transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+          <h3 class="text-xl font-bold font-bengali-heading text-maroon-900 mb-4 border-b border-gold-300 pb-3" data-lang="c3-title">
+            ৩. বাস্তু বিষয়ক কোর্স
+          </h3>
+          <ul class="space-y-4">
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-basic">বেসিক কোর্স (৩ মাস, সপ্তাহে ২ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-basic-fee">ফিস: ৩০০০ টাকা</p>
+            </li>
+            <li class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-bold text-gray-800 text-sm" data-lang="c-dip">ডিপ্লোমা কোর্স (৬ মাস, সপ্তাহে ৩ দিন)</p>
+              <p class="text-gold-700 font-bold mt-1" data-lang="c-dip-fee">ফিস: ১২০০০ টাকা</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Advance Course (Full Width Highlighted) -->
+      <div class="mt-8 bg-gradient-to-r from-maroon-900 to-maroon-950 rounded-2xl border-2 border-gold-400 p-6 shadow-2xl relative overflow-hidden text-center sm:text-left">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold font-bengali-heading text-gold-400 mb-2" data-lang="c4-title">
+              ৪. এডভান্স কোর্স (জ্যোতিষ + হস্তরেখা + বাস্তু)
+            </h3>
+            <p class="text-parchment-200 text-sm font-semibold flex items-center justify-center sm:justify-start gap-2">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              <span data-lang="c-adv">১ বৎসর (সপ্তাহে ৩ দিন)</span>
+            </p>
+          </div>
+          <div class="bg-black/40 px-6 py-4 rounded-xl border border-gold-500/30 shrink-0 text-center shadow-inner">
+            <p class="text-gold-300 text-xl font-bold tracking-wide" data-lang="c-adv-fee">ফিস: ৩০০০০ টাকা</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="kundali" class="py-20 maroon-gradient text-parchment-100 relative overflow-hidden border-b-4 border-gold-600">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
@@ -596,8 +703,9 @@
         <!-- Brand Info -->
         <div class="space-y-4">
           <div class="flex items-center space-x-2">
-            <div class="w-10 h-10 rounded-full border border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400">
-              <i data-lucide="sun" class="w-6 h-6"></i>
+            <div class="w-10 h-10 rounded-full border border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 overflow-hidden">
+               <!-- Default Icon for Footer -->
+               <i data-lucide="sun" class="w-6 h-6"></i>
             </div>
             <span class="text-xl font-bold font-bengali-heading text-gold-400" data-lang="logo-text">
               গ্রহার্চ্চনা জ্যোতির্ভবন
@@ -616,6 +724,7 @@
           <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 font-cinzel" data-lang="foot-links">প্রয়োজনীয় লিঙ্ক</h4>
           <ul class="space-y-2 text-xs text-parchment-200">
             <li><a href="#about" class="hover:text-gold-400 transition" data-lang="nav-about">আচার্য্য পরিচিতি ও উপাধিসমূহ</a></li>
+            <li><a href="#courses" class="hover:text-gold-400 transition" data-lang="nav-courses">জ্যোতিষ কোর্সের বিস্তারিত</a></li>
             <li><a href="#kundali" class="hover:text-gold-400 transition" data-lang="nav-kundali">হাতে তৈরি কোষ্ঠী ও ঠিকুজি</a></li>
           </ul>
         </div>
@@ -629,6 +738,7 @@
             <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-3">জ্যোতিষ ভারতী</span>
             <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-4">জ্যোতিষ শাস্ত্রী</span>
             <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-5">জ্যোতিষ মহামহোপাধ্যায়</span>
+            <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-7">বাস্তু বিশারদ</span>
             <span class="px-2 py-1 bg-maroon-900 border border-gold-600/40 rounded text-gold-300" data-lang="title-6">জ্যোতিষ পদ্মশ্রী</span>
           </div>
           <p class="text-[11px] text-parchment-300/80 pt-1" data-lang="foot-award-sub">
@@ -645,7 +755,7 @@
               <div class="flex flex-col">
                 <span data-lang="foot-address-1" class="font-bold text-gold-300">GRAHARCHHANA JYOTIRBHAVAN</span>
                 <span data-lang="foot-address-2">Vill+po. - Manikpara</span>
-                <span data-lang="foot-address-3">Dist - Jhargram, West Bengal</span>
+                <span data-lang="foot-address-3">Dist - Jhargram, West Bengal, PIN - 721513, India</span>
               </div>
             </div>
             <div class="flex items-center gap-2 mt-2">
@@ -691,10 +801,12 @@
     const i18n = {
       bn: {
         'logo-text': 'গ্রহার্চ্চনা জ্যোতির্ভবন',
+        'logo-subtext': 'জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র',
         'hero-main-title': 'গ্রহার্চ্চনা জ্যোতির্ভবন',
         'hero-sub-title': '(জ্যোতিষ শিক্ষা ও গবেষনা কেন্দ্র)',
         'nav-about': 'আচার্য্য পরিচিতি',
         'nav-services': 'সেবাসমূহ',
+        'nav-courses': 'কোর্সসমূহ',
         'nav-kundali': 'হস্তনির্মিত কোষ্ঠী',
         'hero-badge': '১৮+ বৎসরের দীর্ঘ অভিজ্ঞতা ও বৈদিক জ্যোতিষ সাধনা | প্রতিষ্ঠা: জানুয়ারী ২০২৫',
         'hero-sub': '"নিজ হাতে শাস্ত্রীয় নিয়মে নিখুঁত কোষ্ঠী ও ঠিকুজি প্রস্তুতকরণ, বাস্তু সমাধান ও প্রামাণ্য বৈদিক বিচার। ১৮ বছরের অভিজ্ঞতার আলোকে আপনার ভাগ্যের দিশা।"',
@@ -719,6 +831,8 @@
         'spec-5': 'বাস্তু শাস্ত্র বিশারদ',
         'spec-6': 'চাইল্ড কাউন্সিলর',
         'titles-heading': 'গৌরবান্বিত উপাধি সমূহ (Conferred Titles):',
+        'fellow-title': 'ফেলো মেম্বার (Fellow Member):',
+        'fellow-org': 'Astrological Research Project',
         'awards-heading': 'স্বীকৃতি ও পুরস্কার (Prestigious Awards):',
         'award-1-title': 'জ্যোতিষ পদ্মশ্রী',
         'award-1-sub': 'জ্যোতিষ সাধনায় অনন্য অবদানের জন্য সম্মানিত',
@@ -760,6 +874,18 @@
         's-list-17': 'আবাসিক বাস্তু সমস্যা',
         's-list-18': 'জ্যোতিষ রত্ন নির্বাচন পরামর্শ',
         's-list-19': 'রুদ্রাক্ষ নির্বাচন',
+        'course-heading': 'জ্যোতিষ, হস্তরেখা ও বাস্তু শিক্ষা',
+        'course-sub': 'ছাত্র-ছাত্রীদের জন্য বিশেষ প্রশিক্ষণ',
+        'c1-title': '১. জ্যোতিষ বিষয়ক কোর্স',
+        'c2-title': '২. হস্তরেখা বিষয়ক কোর্স',
+        'c3-title': '৩. বাস্তু বিষয়ক কোর্স',
+        'c-basic': 'বেসিক কোর্স (৩ মাস, সপ্তাহে ২ দিন)',
+        'c-basic-fee': 'ফিস: ৩০০০ টাকা',
+        'c-dip': 'ডিপ্লোমা কোর্স (৬ মাস, সপ্তাহে ৩ দিন)',
+        'c-dip-fee': 'ফিস: ১২০০০ টাকা',
+        'c4-title': '৪. এডভান্স কোর্স (জ্যোতিষ + হস্তরেখা + বাস্তু)',
+        'c-adv': '১ বৎসর (সপ্তাহে ৩ দিন)',
+        'c-adv-fee': 'ফিস: ৩০০০০ টাকা',
         'kundali-badge': 'বিশেষ ঐতিহ্যবাহী সেবা',
         'kundali-title': 'নিজ হাতে তৈরি নিখুঁত কোষ্ঠী ও ঠিকুজি',
         'kundali-desc': 'বর্তমানে বেশিরভাগ কোষ্ঠী জেনেরিক সফটওয়্যারে মুদ্রিত হয়, যার অনেক ক্ষেত্রে অক্ষাংশ-দ্রাঘিমাংশ ও স্থানীয় সূর্যোদয়ের সূক্ষ্ম বিচ্যুতি থাকে। আচার্য্য স্বয়ং দৃক সিদ্ধান্ত ও প্রাচীন পঞ্চাঙ্গ মতে নিজ হাতে কলমে প্রতিটি কোষ্ঠী রচনা করেন, যা ১০০% নির্ভুল ও আজীবন সংরক্ষণের উপযোগী।',
@@ -780,6 +906,7 @@
         'title-4': 'জ্যোতিষ শাস্ত্রী',
         'title-5': 'জ্যোতিষ মহামহোপাধ্যায়',
         'title-6': 'জ্যোতিষ পদ্মশ্রী',
+        'title-7': 'বাস্তু বিশারদ',
         'k-graphic-title': 'শ্রী শ্রী গ্রহ চক্র ও রাশী কুন্ডলী',
         'k-box-1': '১ম লগ্ন',
         'k-box-2': 'রবি / বুধ',
@@ -790,17 +917,19 @@
         'k-guarantee': '১০০% গ্যারান্টি',
         'foot-address-1': 'গ্রহার্চ্চনা জ্যোতির্ভবন',
         'foot-address-2': 'গ্রাম+পো. - মানিকপাড়া',
-        'foot-address-3': 'জেলা - ঝাড়গ্রাম, পশ্চিমবঙ্গ',
+        'foot-address-3': 'জেলা - ঝাড়গ্রাম, পশ্চিমবঙ্গ, পিন - ৭২১৫১৩, ভারত',
         'foot-award-sub': 'কাজী নজরুল ইসলাম স্মৃতি সম্মান (আন্তর্জাতিক আমার ভারত পত্রিকা কোলকাতা)',
         'foot-copy': '© ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।',
         'mob-call': 'কল করুন: 9679456634'
       },
       en: {
         'logo-text': 'Graharchhana Jyotirbhavan',
+        'logo-subtext': 'ASTROLOGY EDUCATION AND RESEARCH CENTER',
         'hero-main-title': 'Graharchhana Jyotirbhavan',
         'hero-sub-title': '(Astrology Education & Research Center)',
         'nav-about': 'About Acharjya',
         'nav-services': 'Services',
+        'nav-courses': 'Courses',
         'nav-kundali': 'Handmade Horoscope',
         'hero-badge': '18+ Years of Vedic Experience | Estd: January 2025',
         'hero-sub': '"Authentic hand-crafted Kundali & Thikuji preparation, proven Vastu solutions, and accurate Vedic destiny guidance based on 18 years of wisdom."',
@@ -811,7 +940,7 @@
         'trust-3-title': 'Strong Academic Foundation',
         'trust-3-sub': 'M.A. (Bengali) & Multi-Shastra Scholar',
         'trust-4-title': 'Nationally Conferred',
-        'trust-4-sub': 'Jyotish Padmashree Recipient',
+        'trust-4-sub': 'Jyotish Padmasree Recipient',
         'about-tag': 'FOUNDER & PRINCIPAL ACHARJYA',
         'about-title': 'Biography of the Founder & Principal Acharjya',
         'about-subtitle': 'Bridging Bengali Literature with Vedic Shastras — 18 Years of Dedication & Spiritual Direction',
@@ -825,8 +954,10 @@
         'spec-5': 'Vastu Shastra Specialist',
         'spec-6': 'Certified Child Counselor',
         'titles-heading': 'Conferred Titles & Accolades:',
+        'fellow-title': 'Fellow Member:',
+        'fellow-org': 'Astrological Research Project',
         'awards-heading': 'Prestigious Awards & Honors:',
-        'award-1-title': 'Jyotish Padmashree',
+        'award-1-title': 'Jyotish Padmasree',
         'award-1-sub': 'Honored for exceptional contribution to Vedic Astrology',
         'award-2-title': 'Kazi Nazrul Islam Smriti Samman',
         'award-2-sub': 'Presented by International Amar Bharat Patrika, Kolkata',
@@ -866,6 +997,18 @@
         's-list-17': 'Residential vastu problem solutions',
         's-list-18': 'Astrological gemstone consultation',
         's-list-19': 'Rudraksha selection',
+        'course-heading': 'Astrology, Palmistry & Vastu Courses',
+        'course-sub': 'Specialized Training for Students',
+        'c1-title': '1. Astrology Course',
+        'c2-title': '2. Palmistry Course',
+        'c3-title': '3. Vastu Course',
+        'c-basic': 'Basic Course (3 Months, 2 days/week)',
+        'c-basic-fee': 'Fee: ₹3000',
+        'c-dip': 'Diploma Course (6 Months, 3 days/week)',
+        'c-dip-fee': 'Fee: ₹12000',
+        'c4-title': '4. Advance Course (Astrology + Palmistry + Vastu)',
+        'c-adv': '1 Year (3 days/week)',
+        'c-adv-fee': 'Fee: ₹30000',
         'kundali-badge': 'Signature Heritage Offering',
         'kundali-title': 'Authentic Hand-Crafted Kundali & Thikuji',
         'kundali-desc': 'Most computer-generated charts suffer from latitude/longitude discrepancies and sunrise approximations. Acharjya personally calculates each planetary degree using traditional Drik Siddhanta and Vedic Ephemeris, delivering a keepsake preserved for generations.',
@@ -880,12 +1023,13 @@
         'foot-links': 'Quick Navigation',
         'foot-honors': 'Titles & Honors',
         'foot-contact': 'Contact & Chambers',
-        'title-1': 'Vidyabhushan',
-        'title-2': 'Vastubhushan',
+        'title-1': 'Vidya bhusan',
+        'title-2': 'Vastu Vushan',
         'title-3': 'Jyotish Bharati',
         'title-4': 'Jyotish Shastri',
         'title-5': 'Jyotish Mahamahopadhyay',
-        'title-6': 'Jyotish Padmashree',
+        'title-6': 'Jyotish Padmasree',
+        'title-7': 'Vastu Visharad',
         'k-graphic-title': 'Sri Sri Graha Chakra & Rashi Kundali',
         'k-box-1': '1st Lagna',
         'k-box-2': 'Sun / Mercury',
@@ -896,7 +1040,7 @@
         'k-guarantee': '100% Guarantee',
         'foot-address-1': 'GRAHARCHHANA JYOTIRBHAVAN',
         'foot-address-2': 'Vill+po. - Manikpara',
-        'foot-address-3': 'Dist - Jhargram, West Bengal',
+        'foot-address-3': 'Dist - Jhargram, West Bengal, PIN - 721513, India',
         'foot-award-sub': 'Kazi Nazrul Islam Smriti Samman (Intl. Amar Bharat Patrika, Kolkata)',
         'foot-copy': '© 2025-2026 Graharchhana Jyotirbhavan (Astrology Education & Research Center). All Rights Reserved.',
         'mob-call': 'Call: 9679456634'
