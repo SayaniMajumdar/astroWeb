@@ -93,12 +93,9 @@
         
         <!-- Logo Brand (Left side) -->
         <a href="#hero" class="flex items-center space-x-2 sm:space-x-3 group flex-1 min-w-0">
-          <!-- Added shrink-0 and responsive size to prevent squishing -->
           <div class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full border-2 border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 shadow-md transform group-hover:rotate-12 transition-transform duration-300 overflow-hidden">
-            <!-- Icon restored completely until actual logo is ready -->
             <i data-lucide="sun" class="w-5 h-5 sm:w-7 sm:h-7 animate-spin-slow"></i>
           </div>
-          <!-- Added text layout adjustments for mobile -->
           <div class="flex flex-col justify-center min-w-0 py-1">
             <span class="block text-[15px] sm:text-xl lg:text-2xl font-bold font-bengali-heading text-gold-400 tracking-wide drop-shadow leading-tight" data-lang="logo-text">
               গ্রহার্চ্চনা জ্যোতির্ভবন
@@ -240,9 +237,23 @@
       <!-- Main Profile Card -->
       <div class="bg-white rounded-3xl vedic-border p-6 sm:p-10 shadow-2xl relative overflow-hidden">
         
-        <div class="grid grid-cols-1 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <div class="space-y-6">
+          <!-- ACHARYA PHOTO AND NAME -->
+          <div class="lg:col-span-4 flex flex-col items-center">
+            <div class="w-56 h-56 sm:w-64 sm:h-64 lg:w-full lg:h-96 rounded-2xl overflow-hidden border-4 border-gold-400 shadow-xl bg-parchment-200 relative group mb-4">
+              <img src="Acharjya.jpeg" alt="Soumendu Acharjya" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-maroon-900/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+            </div>
+            <!-- Name Caption -->
+            <div class="text-center">
+              <h3 class="text-2xl font-bold font-bengali-heading text-maroon-950" data-lang="acharya-name">সৌমেন্দু আচার্য্য</h3>
+              <p class="text-gold-700 font-cinzel text-xs sm:text-sm font-bold tracking-widest mt-1" data-lang="acharya-title">PRINCIPAL ACHARJYA</p>
+            </div>
+          </div>
+
+          <!-- PROFILE DETAILS -->
+          <div class="lg:col-span-8 space-y-6">
             
             <!-- Education Box -->
             <div class="bg-parchment-50 p-5 rounded-2xl border border-gold-300/80">
@@ -269,10 +280,6 @@
                 <div class="p-2.5 bg-maroon-950 text-gold-300 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 border border-gold-600/30">
                   <i data-lucide="hand" class="w-4 h-4 text-gold-400"></i>
                   <span data-lang="spec-2">হস্তরেখা বিশারদ</span>
-                </div>
-                <div class="p-2.5 bg-maroon-950 text-gold-300 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 border border-gold-600/30">
-                  <i data-lucide="gem" class="w-4 h-4 text-gold-400"></i>
-                  <span data-lang="spec-3">রত্ন ও রূদ্রাক্ষ বিশারদ</span>
                 </div>
                 <div class="p-2.5 bg-maroon-950 text-gold-300 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 border border-gold-600/30">
                   <i data-lucide="bell" class="w-4 h-4 text-gold-400"></i>
@@ -653,6 +660,28 @@
               <span data-lang="k-adv-5">পূর্ব ভারত, উত্তর ভারত, দক্ষিণ ভারত এবং পাশ্চাত্য মত অনুযায়ী লিখিত হয়</span>
             </li>
           </ul>
+
+          <!-- Pricing Section Added Here -->
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Package 1 -->
+            <div class="bg-black/30 border border-gold-600/40 rounded-xl p-4 shadow-lg hover:border-gold-400 transition-colors flex flex-col justify-between">
+              <h4 class="text-gold-300 font-bold font-bengali-heading text-base sm:text-lg mb-2" data-lang="k-pack-1-title">বৃহৎ কোষ্ঠী বা জন্ম পত্রিকা</h4>
+              <div class="flex items-center gap-2 mt-auto">
+                <i data-lucide="tag" class="w-4 h-4 text-gold-500"></i>
+                <span class="text-amber-100 font-bold" data-lang="k-pack-1-price">মূল্য: ৫০০০ টাকা</span>
+              </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="bg-gradient-to-br from-maroon-900 to-black/50 border-2 border-gold-500 rounded-xl p-4 shadow-[0_0_15px_rgba(223,166,18,0.2)] relative overflow-hidden flex flex-col justify-between">
+              <div class="absolute top-0 right-0 bg-gold-500 text-maroon-950 text-[10px] sm:text-xs font-extrabold px-2 py-1 rounded-bl-lg tracking-wider" data-lang="k-pack-tag">স্পেশাল</div>
+              <h4 class="text-gold-400 font-bold font-bengali-heading text-base sm:text-lg mb-2 pr-12" data-lang="k-pack-2-title">বৃহৎ কোষ্ঠী বা জন্ম পত্রিকা (স্পেশাল)</h4>
+              <div class="flex items-center gap-2 mt-auto">
+                <i data-lucide="tag" class="w-4 h-4 text-gold-400"></i>
+                <span class="text-gold-200 font-bold" data-lang="k-pack-2-price">মূল্য: ১০০০০ টাকা</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Right Illustration / Sample Kundali Graphic Representation -->
@@ -828,7 +857,6 @@
         'spec-heading': 'শাস্ত্রে বিশেষ দক্ষতা (Specializations):',
         'spec-1': 'জ্যোতিষ শাস্ত্রী',
         'spec-2': 'হস্তরেখা বিশারদ',
-        'spec-3': 'রত্ন ও রূদ্রাক্ষ বিশারদ',
         'spec-4': 'পৌরহিত্য বিশারদ',
         'spec-5': 'বাস্তু শাস্ত্র বিশারদ',
         'spec-6': 'চাইল্ড কাউন্সিলর',
@@ -896,6 +924,11 @@
         'k-adv-3': 'শুভ-অশুভ ক্ষণ, ধাতু-রত্ন প্রতিকার ও রাজযোগ বিশ্লেষণ নির্দেশিকা',
         'k-adv-4': 'সুদৃশ্য বাঁধাই বা হ্যান্ডমেড পেপারে তৈরি যা বংশপরম্পরায় সংরক্ষিত থাকে',
         'k-adv-5': 'পূর্ব ভারত, উত্তর ভারত, দক্ষিণ ভারত এবং পাশ্চাত্য মত অনুযায়ী লিখিত হয়',
+        'k-pack-1-title': 'বৃহৎ কোষ্ঠী বা জন্ম পত্রিকা',
+        'k-pack-1-price': 'মূল্য: ৫০০০ টাকা',
+        'k-pack-tag': 'স্পেশাল',
+        'k-pack-2-title': 'বৃহৎ কোষ্ঠী বা জন্ম পত্রিকা (স্পেশাল)',
+        'k-pack-2-price': 'মূল্য: ১০০০০ টাকা',
         'sample-title': 'নমুনা হস্তনির্মিত চক্র',
         'seal-text': 'আচার্য্যের নিজ হস্তাক্ষর ও স্বাক্ষরযুক্ত',
         'foot-desc': 'জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র (প্রতিষ্ঠা: জানুয়ারি ২০২৫)। ১৮ বৎসরের অভিজ্ঞতায় হস্তনির্মিত নিখুঁত কোষ্ঠী, বাস্তু বিচার ও বৈদিক জ্যোতিষ সমাধান।',
@@ -922,7 +955,9 @@
         'foot-address-3': 'জেলা - ঝাড়গ্রাম, পশ্চিমবঙ্গ, পিন - ৭২১৫১৩, ভারত',
         'foot-award-sub': 'কাজী নজরুল ইসলাম স্মৃতি সম্মান (আন্তর্জাতিক আমার ভারত পত্রিকা কোলকাতা)',
         'foot-copy': '© ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।',
-        'mob-call': 'কল করুন: 9679456634'
+        'mob-call': 'কল করুন: 9679456634',
+        'acharya-name': 'সৌমেন্দু আচার্য্য',
+        'acharya-title': 'প্রধান আচার্য্য'
       },
       en: {
         'logo-text': 'Graharchhana Jyotirbhavan',
@@ -951,7 +986,6 @@
         'spec-heading': 'Areas of Specialization:',
         'spec-1': 'Jyotish Shastri',
         'spec-2': 'Palmistry Specialist',
-        'spec-3': 'Gemstone & Rudraksha Specialist',
         'spec-4': 'Pourohitya Specialist',
         'spec-5': 'Vastu Shastra Specialist',
         'spec-6': 'Certified Child Counselor',
@@ -1019,6 +1053,11 @@
         'k-adv-3': 'Auspicious timings, gemstone/remedy guidelines, and Raja Yoga indicators',
         'k-adv-4': 'Presented in traditional bound form or handmade parchment paper for lifelong preservation',
         'k-adv-5': 'Prepared according to East Indian, North Indian, South Indian, and Western astrological methods',
+        'k-pack-1-title': 'Brihat Janma Patrika / Detailed Horoscope',
+        'k-pack-1-price': 'Price: ₹5000',
+        'k-pack-tag': 'Special',
+        'k-pack-2-title': 'Brihat Janma Patrika (Special)',
+        'k-pack-2-price': 'Price: ₹10000',
         'sample-title': 'Handmade Vedic Chart Schema',
         'seal-text': 'Authenticated by Acharjya with Signature & Seal',
         'foot-desc': 'Astrology Education & Research Center (Estd. January 2025). 18+ Years of Vedic experience in handwritten horoscopes, Vastu, and spiritual counseling.',
@@ -1045,7 +1084,9 @@
         'foot-address-3': 'Dist - Jhargram, West Bengal, PIN - 721513, India',
         'foot-award-sub': 'Kazi Nazrul Islam Smriti Samman (Intl. Amar Bharat Patrika, Kolkata)',
         'foot-copy': '© 2025-2026 Graharchhana Jyotirbhavan (Astrology Education & Research Center). All Rights Reserved.',
-        'mob-call': 'Call: 9679456634'
+        'mob-call': 'Call: 9679456634',
+        'acharya-name': 'Soumendu Acharjya',
+        'acharya-title': 'PRINCIPAL ACHARJYA'
       }
     };
 
