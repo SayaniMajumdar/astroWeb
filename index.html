@@ -738,7 +738,7 @@
         </h3>
         <div class="w-24 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
         <p class="mt-4 text-gray-700 font-garamond text-lg italic" data-lang="review-subtitle">
-          আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন
+          আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন
         </p>
       </div>
 
@@ -1020,7 +1020,7 @@
         'acharya-title': 'প্রধান আচার্য্য',
         'review-tag': 'CLIENTS FEEDBACK',
         'review-title': 'শ্রদ্ধাভাজন ভক্ত ও ক্লায়েন্টদের মতামত',
-        'review-subtitle': 'আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন',
+        'review-subtitle': 'আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন',
         'form-title': 'আপনার মূল্যবান রিভিউ দিন',
         'label-name': 'আপনার নাম (Name)',
         'label-rating': 'রেটিং (Rating: 1 থেকে 5)',
@@ -1229,7 +1229,7 @@
       }
     }
 
-    // Submit new review to Vercel API
+    // Submit new review to Vercel API and show instantly
     async function submitReview(event) {
       event.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -1253,9 +1253,29 @@
         const data = await response.json();
         if (response.ok) {
           msg.className = 'text-xs text-center font-semibold mt-2 text-green-600';
-          msg.innerText = data.message || 'সফলভাবে জমা হয়েছে!';
+          msg.innerText = data.message || 'সফলভাবে জমা হয়েছে!';
           document.getElementById('reviewForm').reset();
-          fetchReviews(); // Refresh review list
+          
+          // Instant UI update if backend returns the newly created review object
+          if (data.review) {
+            const container = document.getElementById('reviewsContainer');
+            if (container.innerHTML.includes('লোড হচ্ছে') || container.innerHTML.includes('কোনো রিভিউ জমা পড়েনি')) {
+              container.innerHTML = '';
+            }
+            const newReviewHtml = `
+              <div class="bg-white p-5 rounded-2xl border border-gold-300/80 shadow-md">
+                <div class="flex justify-between items-center mb-2">
+                  <h5 class="font-bold text-maroon-950 text-base">${escapeHtml(data.review.name)}</h5>
+                  <span class="text-amber-500 text-sm">${'⭐'.repeat(data.review.rating)}</span>
+                </div>
+                <p class="text-gray-700 text-sm leading-relaxed mb-2">${escapeHtml(data.review.review_text)}</p>
+                <span class="text-[10px] text-gray-400">${new Date(data.review.created_at).toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US')}</span>
+              </div>
+            `;
+            container.insertAdjacentHTML('afterbegin', newReviewHtml);
+          } else {
+            fetchReviews(); // Fallback to fetching all reviews
+          }
         } else {
           throw new Error(data.error || 'ত্রুটি ঘটেছে');
         }
