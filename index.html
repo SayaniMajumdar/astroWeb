@@ -1210,7 +1210,7 @@
         const data = await response.json();
         
         // Handle both direct array format or object wrapper format like { reviews: [...] }
-        const reviews = Array.isArray(data) ? data : (data.reviews || data.data || []);
+        const reviews = Array.isArray(data) ? data : (data.reviews || data.data || data.rows || []);
         
         if (!reviews || reviews.length === 0) {
           container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">এখনো কোনো রিভিউ জমা পড়েনি। প্রথম রিভিউটি আপনি দিন!</p>';
