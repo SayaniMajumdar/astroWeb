@@ -1,0 +1,7 @@
+{
+  "name": "graharchhana",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vercel/postgres": "^0.7.2"
+  }
+}
