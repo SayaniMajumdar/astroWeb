@@ -1,14 +1,13 @@
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL, // Vercel অটোমেটিক এই এনভায়রনমেন্ট ভেরিয়েবল দেয়
+  connectionString: process.env.POSTGRES_URL, 
   ssl: {
     rejectUnauthorized: false
   }
 });
 
 export default async function handler(req, res) {
-  // CORS সেটআপ (যদি প্রয়োজন হয়)
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -18,13 +17,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    // সব রিভিউ ফেচ করার জন্য (GET)
+    // GET: সব রিভিউ ফেচ করার জন্য
     if (req.method === 'GET') {
-      const result = await queryDatabase('SELECT * FROM reviews ORDER BY created_at DESC LIMIT 10');
+      // এখানে queryDatabase এর বদলে pool.query হবে
+      const result = await pool.query('SELECT * FROM reviews ORDER BY created_at DESC LIMIT 10');
       return res.status(200).json(result.rows);
     }
 
-    // নতুন রিভিউ সেভ করার জন্য (POST)
+    // POST: নতুন রিভিউ সেভ করার জন্য
     if (req.method === 'POST') {
       const { name, rating, review_text } = req.body;
 
@@ -40,12 +40,12 @@ export default async function handler(req, res) {
       const values = [name, parseInt(rating), review_text];
       const newReview = await pool.query(query, values);
 
-      return res.status(201).json({ message: 'রিভিউ সফলভাবে জমা হয়েছে!', review: newReview.rows[0] });
+      return res.status(201).json({ message: 'রিভিউ সফলভাবে জমা হয়েছে!', review: newReview.rows[0] });
     }
 
     return res.status(405).json({ error: 'Method Not Allowed' });
   } catch (error) {
     console.error('Database Error:', error);
-    return res.status(500).json({ error: 'সার্ভারে সমস্যা হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।' });
+    return res.status(500).json({ error: 'সার্ভারে সমস্যা হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।' });
   }
 }
