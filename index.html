@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Supabase CDN Added -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
     tailwind.config = {
@@ -419,7 +421,7 @@
     </div>
   </section>
 
-  <!-- REVIEWS SECTION (VERCEL API INTEGRATED) -->
+  <!-- REVIEWS SECTION (SUPABASE INTEGRATED) -->
   <section id="reviews" class="py-20 bg-parchment-50 border-b-4 border-gold-600">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -544,7 +546,6 @@
     let currentLang = 'bn'; 
 
     const i18n = {
-      // (এখানে আপনার আগের i18n এর সম্পূর্ণ translation object আছে, আমি জায়গা বাঁচানোর জন্য তা স্কিপ করছি না, নিচে পুরোটা দেওয়া হলো)
       bn: {
         'logo-text': 'গ্রহার্চ্চনা জ্যোতির্ভবন',
         'logo-subtext': 'জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র',
@@ -826,7 +827,11 @@
       elements.forEach(el => {
         const key = el.getAttribute('data-lang');
         if (i18n[currentLang] && i18n[currentLang][key]) {
+          if(el.children.length === 0 || key === 'no-reviews') {
              el.innerText = i18n[currentLang][key];
+          } else {
+             el.innerText = i18n[currentLang][key];
+          }
         }
       });
     }
@@ -855,22 +860,39 @@
     applyTranslations();
 
     // ==========================================
-    // VERCEL API INTEGRATION (REAL-TIME REVIEWS)
+    // SUPABASE INTEGRATION (REAL-TIME REVIEWS)
     // ==========================================
     
+    // ⚠️ নিচে আপনার Supabase URL এবং ANON KEY বসান:
+    const SUPABASE_URL = 'https://dzcbzyvieihpamuotlwm.supabase.co'; 
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR6Y2J6eXZpZWlocGFtdW90bHdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwODE5NjMsImV4cCI6MjEwNTY1Nzk2M30.e6g4h3tKlVEmAR1fjFjUIQOrdsCgVv3hS7HvNHwnA1I'; // <-- এখানে আপনার anon public key বসান
+
+    let supabaseClient = null;
+    if (typeof supabase !== 'undefined') {
+        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+
     const reviewForm = document.getElementById('reviewForm');
     const reviewsContainer = document.getElementById('reviewsContainer');
 
-    // Fetch and Display Reviews via Vercel API
+    // Fetch and Display Reviews from Supabase
     async function fetchReviews() {
+      if (!supabaseClient) {
+        reviewsContainer.innerHTML = '<p class="col-span-full text-center text-red-500">Supabase connection error.</p>';
+        return;
+      }
+
       reviewsContainer.innerHTML = '<p class="col-span-full text-center text-gray-500 italic"><i data-lucide="loader-2" class="w-6 h-6 animate-spin mx-auto mb-2"></i> Loading reviews...</p>';
       lucide.createIcons();
 
       try {
-        const response = await fetch('/api/reviews');
-        if (!response.ok) throw new Error('Network response was not ok');
-        
-        const data = await response.json();
+        const { data, error } = await supabaseClient
+          .from('reviews')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+
         reviewsContainer.innerHTML = '';
         
         if (data.length === 0) {
@@ -905,7 +927,7 @@
       }
     }
 
-    // Handle Form Submit to Vercel API
+    // Handle Form Submit to Supabase
     reviewForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
@@ -919,17 +941,13 @@
       const rating = parseInt(document.getElementById('reviewRating').value);
       const review_text = document.getElementById('reviewText').value.trim();
 
-      if(name && review_text) {
+      if(name && review_text && supabaseClient) {
         try {
-          const response = await fetch('/api/reviews', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, rating, review_text })
-          });
+          const { error } = await supabaseClient
+            .from('reviews')
+            .insert([{ name, rating, review_text }]);
 
-          if (!response.ok) throw new Error('Failed to submit review');
+          if (error) throw error;
 
           reviewForm.reset();
           const alertMsg = currentLang === 'bn' 
@@ -942,7 +960,7 @@
 
         } catch (error) {
           console.error('Error submitting review:', error);
-          alert('দুঃখিত, কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+          alert('দুঃখিত, কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।');
         } finally {
           submitBtn.innerHTML = originalBtnHtml;
           submitBtn.disabled = false;
