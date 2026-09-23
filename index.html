@@ -1202,14 +1202,17 @@
       lucide.createIcons();
     }
 
-    // Fetch and display reviews from Vercel API
+    // Fetch and display reviews from Vercel API (Fixed to reliably display all database reviews)
     async function fetchReviews() {
       const container = document.getElementById('reviewsContainer');
       try {
         const response = await fetch('/api/reviews');
-        const reviews = await response.json();
+        const data = await response.json();
         
-        if (!Array.isArray(reviews) || reviews.length === 0) {
+        // Handle both direct array format or object wrapper format like { reviews: [...] }
+        const reviews = Array.isArray(data) ? data : (data.reviews || data.data || []);
+        
+        if (!reviews || reviews.length === 0) {
           container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">এখনো কোনো রিভিউ জমা পড়েনি। প্রথম রিভিউটি আপনি দিন!</p>';
           return;
         }
@@ -1218,13 +1221,14 @@
           <div class="bg-white p-5 rounded-2xl border border-gold-300/80 shadow-md">
             <div class="flex justify-between items-center mb-2">
               <h5 class="font-bold text-maroon-950 text-base">${escapeHtml(r.name)}</h5>
-              <span class="text-amber-500 text-sm">${'⭐'.repeat(r.rating)}</span>
+              <span class="text-amber-500 text-sm">${'⭐'.repeat(Number(r.rating) || 5)}</span>
             </div>
             <p class="text-gray-700 text-sm leading-relaxed mb-2">${escapeHtml(r.review_text)}</p>
-            <span class="text-[10px] text-gray-400">${new Date(r.created_at).toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US')}</span>
+            <span class="text-[10px] text-gray-400">${r.created_at ? new Date(r.created_at).toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US') : ''}</span>
           </div>
         `).join('');
       } catch (error) {
+        console.error("Error fetching reviews:", error);
         container.innerHTML = '<p class="text-red-500 text-sm text-center py-6">রিভিউ লোড করতে সমস্যা হয়েছে।</p>';
       }
     }
@@ -1256,26 +1260,8 @@
           msg.innerText = data.message || 'সফলভাবে জমা হয়েছে!';
           document.getElementById('reviewForm').reset();
           
-          // Instant UI update if backend returns the newly created review object
-          if (data.review) {
-            const container = document.getElementById('reviewsContainer');
-            if (container.innerHTML.includes('লোড হচ্ছে') || container.innerHTML.includes('কোনো রিভিউ জমা পড়েনি')) {
-              container.innerHTML = '';
-            }
-            const newReviewHtml = `
-              <div class="bg-white p-5 rounded-2xl border border-gold-300/80 shadow-md">
-                <div class="flex justify-between items-center mb-2">
-                  <h5 class="font-bold text-maroon-950 text-base">${escapeHtml(data.review.name)}</h5>
-                  <span class="text-amber-500 text-sm">${'⭐'.repeat(data.review.rating)}</span>
-                </div>
-                <p class="text-gray-700 text-sm leading-relaxed mb-2">${escapeHtml(data.review.review_text)}</p>
-                <span class="text-[10px] text-gray-400">${new Date(data.review.created_at).toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US')}</span>
-              </div>
-            `;
-            container.insertAdjacentHTML('afterbegin', newReviewHtml);
-          } else {
-            fetchReviews(); // Fallback to fetching all reviews
-          }
+          // Fetch fresh reviews from database directly to ensure everything is in sync
+          fetchReviews();
         } else {
           throw new Error(data.error || 'ত্রুটি ঘটেছে');
         }
