@@ -84,6 +84,11 @@
         background-position: 200% center;
       }
     }
+    /* Active Navbar Link Style */
+    .nav-active {
+      color: #f5c542 !important; /* gold-400 */
+      border-bottom: 2px solid #f5c542;
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-gold-500 selection:text-maroon-950 relative">
@@ -113,12 +118,12 @@
         <div class="flex items-center space-x-3 sm:space-x-6 lg:space-x-8 shrink-0">
           
           <!-- Desktop Navigation -->
-          <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-parchment-100">
+          <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-parchment-100" id="desktopNav">
             <a href="#about" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-about">আচার্য্য পরিচিতি</a>
             <a href="#services" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-services">সেবাসমূহ</a>
             <a href="#courses" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-courses">কোর্সসমূহ</a>
             <a href="#kundali" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-kundali">হস্তনির্মিত কোষ্ঠী</a>
-            <a href="#reviews" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-reviews">রিভিউ</a>
+            <a href="#reviews" class="hover:text-gold-400 transition-colors py-1" data-lang="nav-reviews">মতামত</a>
           </nav>
 
           <!-- Language Switcher & Mobile Toggle -->
@@ -141,12 +146,12 @@
 
     <!-- Improved Mobile Drawer -->
     <div id="mobileMenu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-maroon-950 border-b-2 border-gold-600 shadow-2xl">
-      <nav class="flex flex-col px-6 py-6 space-y-5">
+      <nav class="flex flex-col px-6 py-6 space-y-5" id="mobileNav">
         <a href="#about" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-about">আচার্য্য পরিচিতি</a>
         <a href="#services" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-services">সেবাসমূহ</a>
         <a href="#courses" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-courses">কোর্সসমূহ</a>
         <a href="#kundali" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-kundali">হস্তনির্মিত কোষ্ঠী ও ঠিকুজি</a>
-        <a href="#reviews" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-reviews">রিভিউ ও মতামত</a>
+        <a href="#reviews" onclick="toggleMobileMenu()" class="text-parchment-100 hover:text-gold-400 font-bold text-lg border-b border-gold-900/50 pb-2" data-lang="nav-reviews">মতামত</a>
         
         <div class="pt-2">
           <a href="tel:+919679456634" class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-gold-600/20 text-gold-400 border border-gold-600/40 font-bold text-sm">
@@ -778,9 +783,9 @@
 
         <!-- Display Reviews Grid (Bottom) -->
         <div class="space-y-4">
-          <h4 class="text-xl font-bold font-bengali-heading text-maroon-950 mb-4" data-lang="list-title">সাম্প্রতিক রিভিউসমূহ</h4>
+          <h4 class="text-xl font-bold font-bengali-heading text-maroon-950 mb-4" data-lang="list-title">সাম্প্রতিক মতামতসমূহ</h4>
           <div id="reviewsContainer" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
-            <p class="text-gray-500 text-sm text-center py-6" data-lang="loading-text">রিভিউ লোড হচ্ছে...</p>
+            <p class="text-gray-500 text-sm text-center py-6" data-lang="loading-text">মতামত লোড হচ্ছে...</p>
           </div>
         </div>
 
@@ -819,7 +824,7 @@
             <li><a href="#about" class="hover:text-gold-400 transition" data-lang="nav-about">আচার্য্য পরিচিতি ও উপাধিসসমূহ</a></li>
             <li><a href="#courses" class="hover:text-gold-400 transition" data-lang="nav-courses">জ্যোতিষ কোর্সের বিস্তারিত</a></li>
             <li><a href="#kundali" class="hover:text-gold-400 transition" data-lang="nav-kundali">হাতে তৈরি কোষ্ঠী ও ঠিকুজি</a></li>
-            <li><a href="#reviews" class="hover:text-gold-400 transition" data-lang="nav-reviews">ভক্তদের রিভিউ</a></li>
+            <li><a href="#reviews" class="hover:text-gold-400 transition" data-lang="nav-reviews">মতামত</a></li>
           </ul>
         </div>
 
@@ -902,7 +907,7 @@
         'nav-services': 'সেবাসমূহ',
         'nav-courses': 'কোর্সসমূহ',
         'nav-kundali': 'হস্তনির্মিত কোষ্ঠী',
-        'nav-reviews': 'রিভিউ',
+        'nav-reviews': 'মতামত',
         'hero-badge': '১৮+ বৎসরের দীর্ঘ অভিজ্ঞতা ও বৈদিক জ্যোতিষ সাধনা | প্রতিষ্ঠা: জানুয়ারী ২০২৫',
         'hero-sub': '"নিজ হাতে শাস্ত্রীয় নিয়মে নিখুঁত কোষ্ঠী ও ঠিকুজি প্রস্তুতকরণ, বাস্তু সমাধান ও প্রামাণ্য বৈদিক বিচার। ১৮ বছরের অভিজ্ঞতার আলোকে আপনার ভাগ্যের দিশা।"',
         'trust-1-title': '১৮+ বছর অভিজ্ঞতা',
@@ -1030,8 +1035,8 @@
         'label-rating': 'রেটিং (Rating: 1 থেকে 5)',
         'label-text': 'আপনার অভিজ্ঞতা বা মতামত (Review)',
         'btn-submit': 'রিভিউ জমা দিন',
-        'list-title': 'সাম্প্রতিক রিভিউসমূহ',
-        'loading-text': 'রিভিউ লোড হচ্ছে...'
+        'list-title': 'সাম্প্রতিক মতামতসমূহ',
+        'loading-text': 'মতামত লোড হচ্ছে...'
       },
       en: {
         'logo-text': 'Graharchhana Jyotirbhavan',
@@ -1206,18 +1211,17 @@
       lucide.createIcons();
     }
 
-    // Fetch and display reviews from Vercel API (Fixed to reliably display all database reviews)
+    // Fetch and display reviews from Vercel API
     async function fetchReviews() {
       const container = document.getElementById('reviewsContainer');
       try {
         const response = await fetch('/api/reviews');
         const data = await response.json();
         
-        // Handle both direct array format or object wrapper format like { reviews: [...] }
         const reviews = Array.isArray(data) ? data : (data.reviews || data.data || data.rows || []);
         
         if (!reviews || reviews.length === 0) {
-          container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">এখনো কোনো রিভিউ জমা পড়েনি। প্রথম রিভিউটি আপনি দিন!</p>';
+          container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">এখনো কোনো মতামত জমা পড়েনি। প্রথম মতামতটি আপনি দিন!</p>';
           return;
         }
 
@@ -1233,11 +1237,11 @@
         `).join('');
       } catch (error) {
         console.error("Error fetching reviews:", error);
-        container.innerHTML = '<p class="text-red-500 text-sm text-center py-6">রিভিউ লোড করতে সমস্যা হয়েছে।</p>';
+        container.innerHTML = '<p class="text-red-500 text-sm text-center py-6">মতামত লোড করতে সমস্যা হয়েছে।</p>';
       }
     }
 
-    // Submit new review to Vercel API and show instantly
+    // Submit new review to Vercel API
     async function submitReview(event) {
       event.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -1264,7 +1268,6 @@
           msg.innerText = data.message || 'সফলভাবে জমা হয়েছে!';
           document.getElementById('reviewForm').reset();
           
-          // Fetch fresh reviews from database directly to ensure everything is in sync
           fetchReviews();
         } else {
           throw new Error(data.error || 'ত্রুটি ঘটেছে');
@@ -1283,6 +1286,31 @@
       if (!str) return '';
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
+
+    // ScrollSpy function to highlight active link in navbar
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("header nav a[href^='#']");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          // Offset for the sticky header
+          if (pageYOffset >= sectionTop - 120) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("nav-active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("nav-active");
+          }
+        });
+      });
+    });
 
     // Initialize default language and load reviews on page load
     toggleLanguage();
