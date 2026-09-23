@@ -754,7 +754,7 @@
         
         <!-- Review Submission Form (Top) -->
         <div class="bg-white rounded-3xl vedic-border p-6 sm:p-8 shadow-xl">
-          <h4 class="text-xl font-bold font-bengali-heading text-maroon-950 mb-4" data-lang="form-title">আপনার মূল্যবান রিভিউ দিন</h4>
+          <h4 class="text-xl font-bold font-bengali-heading text-maroon-950 mb-4" data-lang="form-title">আপনার মূল্যবান মতামত দিন</h4>
           <form id="reviewForm" onsubmit="submitReview(event)" class="space-y-4">
             <div>
               <label class="block text-xs font-bold text-gray-700 mb-1" data-lang="label-name">আপনার নাম (Name)</label>
@@ -763,11 +763,11 @@
             <div>
               <label class="block text-xs font-bold text-gray-700 mb-1" data-lang="label-rating">রেটিং (Rating: 1 থেকে 5)</label>
               <select id="reviewRating" class="w-full px-4 py-2 rounded-lg border border-gold-300 focus:outline-none focus:border-gold-500 text-sm">
-                <option value="5">⭐⭐⭐⭐⭐ (৫ - অতি উত্তম)</option>
-                <option value="4">⭐⭐⭐⭐ (৪ - ভালো)</option>
-                <option value="3">⭐⭐⭐ (৩ - মাঝারি)</option>
-                <option value="2">⭐⭐ (২ - অসন্তুষ্ট)</option>
-                <option value="1">⭐ (১ - খারাপ)</option>
+                <option value="5" data-lang="rate-5">⭐⭐⭐⭐⭐ (৫ - অতি উত্তম)</option>
+                <option value="4" data-lang="rate-4">⭐⭐⭐⭐ (৪ - ভালো)</option>
+                <option value="3" data-lang="rate-3">⭐⭐⭐ (৩ - মাঝারি)</option>
+                <option value="2" data-lang="rate-2">⭐⭐ (২ - অসন্তুষ্ট)</option>
+                <option value="1" data-lang="rate-1">⭐ (১ - খারাপ)</option>
               </select>
             </div>
             <div>
@@ -775,7 +775,7 @@
               <textarea id="reviewText" rows="4" required class="w-full px-4 py-2 rounded-lg border border-gold-300 focus:outline-none focus:border-gold-500 text-sm"></textarea>
             </div>
             <button type="submit" id="submitBtn" class="w-full py-3 bg-maroon-900 text-gold-300 font-bold rounded-lg border border-gold-500 hover:bg-gold-500 hover:text-maroon-950 transition duration-300 shadow-md" data-lang="btn-submit">
-              রিভিউ জমা দিন
+              মতামত জমা দিন
             </button>
             <p id="formMessage" class="text-xs text-center font-semibold mt-2"></p>
           </form>
@@ -1030,13 +1030,18 @@
         'review-tag': 'CLIENTS FEEDBACK',
         'review-title': 'শ্রদ্ধাভাজন ভক্ত ও ক্লায়েন্টদের মতামত',
         'review-subtitle': 'আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন',
-        'form-title': 'আপনার মূল্যবান রিভিউ দিন',
+        'form-title': 'আপনার মূল্যবান মতামত দিন',
         'label-name': 'আপনার নাম (Name)',
         'label-rating': 'রেটিং (Rating: 1 থেকে 5)',
         'label-text': 'আপনার অভিজ্ঞতা বা মতামত (Review)',
-        'btn-submit': 'রিভিউ জমা দিন',
+        'btn-submit': 'মতামত জমা দিন',
         'list-title': 'সাম্প্রতিক মতামতসমূহ',
-        'loading-text': 'মতামত লোড হচ্ছে...'
+        'loading-text': 'মতামত লোড হচ্ছে...',
+        'rate-5': '⭐⭐⭐⭐⭐ (৫ - অতি উত্তম)',
+        'rate-4': '⭐⭐⭐⭐ (৪ - ভালো)',
+        'rate-3': '⭐⭐⭐ (৩ - মাঝারি)',
+        'rate-2': '⭐⭐ (২ - অসন্তুষ্ট)',
+        'rate-1': '⭐ (১ - খারাপ)'
       },
       en: {
         'logo-text': 'Graharchhana Jyotirbhavan',
@@ -1176,7 +1181,12 @@
         'label-text': 'Your Experience / Review',
         'btn-submit': 'Submit Review',
         'list-title': 'Recent Reviews',
-        'loading-text': 'Loading reviews...'
+        'loading-text': 'Loading reviews...',
+        'rate-5': '⭐⭐⭐⭐⭐ (5 - Excellent)',
+        'rate-4': '⭐⭐⭐⭐ (4 - Good)',
+        'rate-3': '⭐⭐⭐ (3 - Average)',
+        'rate-2': '⭐⭐ (2 - Dissatisfied)',
+        'rate-1': '⭐ (1 - Poor)'
       }
     };
 
@@ -1221,7 +1231,7 @@
         const reviews = Array.isArray(data) ? data : (data.reviews || data.data || data.rows || []);
         
         if (!reviews || reviews.length === 0) {
-          container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">এখনো কোনো মতামত জমা পড়েনি। প্রথম মতামতটি আপনি দিন!</p>';
+          container.innerHTML = '<p class="text-gray-500 text-sm text-center py-6" data-lang="loading-text">এখনো কোনো মতামত জমা পড়েনি। প্রথম মতামতটি আপনি দিন!</p>';
           return;
         }
 
