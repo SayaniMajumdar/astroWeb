@@ -89,6 +89,19 @@
       color: #f5c542 !important; /* gold-400 */
       border-bottom: 2px solid #f5c542;
     }
+    
+    /* Rotating Logo Animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .animate-spin-slow {
+      animation: spin 10s linear infinite;
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-gold-500 selection:text-maroon-950 relative">
@@ -100,9 +113,9 @@
         
         <!-- Logo Brand (Left side) -->
         <a href="#hero" class="flex items-center space-x-2 sm:space-x-3 group flex-1 min-w-0">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full border-2 border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 shadow-md transform group-hover:rotate-12 transition-transform duration-300 overflow-hidden">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full border-2 border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 shadow-md overflow-hidden">
             <!-- Added Logo Image -->
-            <img src="logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+            <img src="lala.png" alt="Logo" class="w-full h-full object-cover">
           </div>
           <div class="flex flex-col justify-center min-w-0 py-1">
             <span class="block text-[15px] sm:text-xl lg:text-2xl font-bold font-bengali-heading text-gold-400 tracking-wide drop-shadow leading-tight" data-lang="logo-text">
@@ -176,7 +189,7 @@
       </div>
 
       <!-- MAIN PROMINENT HEADLINE -->
-      <div class="p-4 sm:p-8 rounded-2xl bg-black/30 border border-gold-500/40 backdrop-blur-sm max-w-4xl mx-auto mb-8 shadow-2xl">
+      <div class="p-4 sm:p-8 rounded-2xl bg-black/30 border border-gold-500/40 backdrop-blur-sm max-w-4xl mx-auto shadow-2xl">
         <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold font-bengali-heading text-gold-400 tracking-normal sm:tracking-wide drop-shadow-md leading-tight mb-3" data-lang="hero-main-title">
           গ্রহার্চ্চনা জ্যোতির্ভবন
         </h1>
@@ -188,13 +201,26 @@
         </p>
       </div>
 
+      <!-- NEW: Founder Info inside Hero -->
+      <div class="flex flex-col items-center justify-center mt-10 mb-8 z-10 relative">
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-gold-400 overflow-hidden shadow-[0_0_20px_rgba(223,166,18,0.4)] mb-4">
+          <img src="p.jpeg" alt="Soumendu Acharjya" class="w-full h-full object-cover">
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold font-bengali-heading text-gold-300 tracking-wide drop-shadow-md" data-lang="hero-founder-name">
+          সৌমেন্দু আচার্য্য
+        </h2>
+        <p class="text-sm sm:text-base text-amber-100 font-semibold tracking-widest uppercase mt-1" data-lang="hero-founder-title">
+          বৈদিক জ্যোতিষী ও বাস্তু কনসালটেন্ট
+        </p>
+      </div>
+
       <!-- Subtitle Message -->
-      <p class="max-w-3xl mx-auto text-base sm:text-xl text-parchment-200/90 leading-relaxed font-garamond italic mb-10" data-lang="hero-sub">
+      <p class="max-w-3xl mx-auto text-base sm:text-xl text-parchment-200/90 leading-relaxed font-garamond italic mt-6 mb-10" data-lang="hero-sub">
         "নিজ হাতে শাস্ত্রীয় নিয়মে নিখুঁত কোষ্ঠী ও ঠিকুজি প্রস্তুতকরণ, বাস্তু সমাধান ও প্রামাণ্য বৈদিক বিচার। ১৮ বছরের অভিজ্ঞতার আলোকে আপনার ভাগ্যের দিশা।"
       </p>
 
       <!-- Trust Badges Row -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-gold-800/60 text-left">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-gold-800/60 text-left">
         <div class="flex items-center gap-3 bg-maroon-900/40 p-3 rounded-lg border border-gold-600/20">
           <div class="p-2.5 rounded-full bg-gold-500/20 text-gold-400"><i data-lucide="clock" class="w-5 h-5"></i></div>
           <div>
@@ -233,10 +259,10 @@
       <!-- Section Title -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-xs sm:text-sm uppercase tracking-widest font-cinzel text-gold-700 font-bold mb-2" data-lang="about-tag">
-          FOUNDER & PRINCIPAL ACHARJYA
+          প্রতিষ্ঠাতা ও প্রধান
         </h2>
         <h3 class="text-3xl sm:text-4xl font-extrabold font-bengali-heading text-maroon-950" data-lang="about-title">
-          প্রতিষ্ঠাতা ও প্রধান আচার্য্যের সংক্ষিপ্ত জীবনালেখ্য
+          প্রতিষ্ঠাতা ও প্রধানের সংক্ষিপ্ত জীবনালেখ্য
         </h3>
         <div class="w-24 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
         <p class="mt-4 text-gray-700 font-garamond text-lg italic" data-lang="about-subtitle">
@@ -258,7 +284,7 @@
             <!-- Name Caption -->
             <div class="text-center">
               <h3 class="text-2xl font-bold font-bengali-heading text-maroon-950" data-lang="acharya-name">সৌমেন্দু আচার্য্য</h3>
-              <p class="text-gold-700 font-cinzel text-xs sm:text-sm font-bold tracking-widest mt-1" data-lang="acharya-title">PRINCIPAL ACHARJYA</p>
+              <p class="text-gold-700 font-cinzel text-xs sm:text-sm font-bold tracking-widest mt-1" data-lang="acharya-title">Founder & Principal</p>
             </div>
           </div>
 
@@ -803,7 +829,7 @@
           <div class="flex items-center space-x-2">
             <div class="w-10 h-10 rounded-full border border-gold-400 bg-maroon-900 flex items-center justify-center text-gold-400 overflow-hidden">
                <!-- Added Logo Image -->
-               <img src="logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+               <img src="lala.png" alt="Logo" class="w-full h-full object-cover">
             </div>
             <span class="text-xl font-bold font-bengali-heading text-gold-400" data-lang="logo-text">
               গ্রহার্চ্চনা জ্যোতির্ভবন
@@ -903,6 +929,8 @@
         'logo-subtext': 'জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র',
         'hero-main-title': 'গ্রহার্চ্চনা জ্যোতির্ভবন',
         'hero-sub-title': '(জ্যোতিষ শিক্ষা ও গবেষনা কেন্দ্র)',
+        'hero-founder-name': 'সৌমেন্দু আচার্য্য',
+        'hero-founder-title': 'বৈদিক জ্যোতিষী ও বাস্তু কনসালটেন্ট',
         'nav-about': 'আচার্য্য পরিচিতি',
         'nav-services': 'সেবাসমূহ',
         'nav-courses': 'কোর্সসমূহ',
@@ -918,8 +946,8 @@
         'trust-3-sub': 'M.A. (বাংলা) ও বহু শাস্ত্রে বিশারদ',
         'trust-4-title': 'জাতীয় স্তরে পুরস্কৃত',
         'trust-4-sub': 'জ্যোতিষ পদ্মশ্রী ভূষিত',
-        'about-tag': 'প্রতিষ্ঠাতা ও প্রধান আচার্য্য',
-        'about-title': 'প্রতিষ্ঠাতা ও প্রধান আচার্য্যের সংক্ষিপ্ত জীবনালেখ্য',
+        'about-tag': 'প্রতিষ্ঠাতা ও প্রধান',
+        'about-title': 'প্রতিষ্ঠাতা ও প্রধানের সংক্ষিপ্ত জীবনালেখ্য',
         'about-subtitle': 'বাংলা সাহিত্য থেকে বৈদিক জ্যোতিষ সাধনা—১৮ বছরের অবিরাম নিষ্ঠা ও পথপ্রদর্শন',
         'edu-heading': 'শিক্ষাগত যোগ্যতা ও পদার্পণ',
         'edu-text': 'উচ্চতর শিক্ষায় বাংলায় M.A. সফলতার সাথে সম্পন্ন করার পর গভীর আত্মিক টানে জ্যোতিষশাস্ত্র ও বৈদিক দর্শনের জগতে আগমন। সাহিত্যবোধ ও বৈদিক প্রজ্ঞার মেলবন্ধনে প্রতিটি গণনায় রয়েছে সূক্ষ্ম যুক্তিবোধ ও প্রামাণ্য নিষ্ঠা।',
@@ -1026,7 +1054,7 @@
         'foot-copy': '© ২০২৫-২০২৬ গ্রহার্চ্চনা জ্যোতির্ভবন (জ্যোতিষ শিক্ষা ও গবেষণা কেন্দ্র)। সর্বস্বত্ব সংরক্ষিত।',
         'mob-call': 'কল করুন: 9679456634',
         'acharya-name': 'সৌমেন্দু আচার্য্য',
-        'acharya-title': 'প্রধান আচার্য্য',
+        'acharya-title': 'প্রতিষ্ঠাতা ও প্রধান',
         'review-tag': 'CLIENTS FEEDBACK',
         'review-title': 'শ্রদ্ধাভাজন ভক্ত ও ক্লায়েন্টদের মতামত',
         'review-subtitle': 'আপনার অভিজ্ঞতা শেয়ার করুন এবং অন্যদের মতামত দেখুন',
@@ -1048,6 +1076,8 @@
         'logo-subtext': 'ASTROLOGY EDUCATION AND RESEARCH CENTER',
         'hero-main-title': 'Graharchhana Jyotirbhavan',
         'hero-sub-title': '(Astrology Education & Research Center)',
+        'hero-founder-name': 'Soumendu Acharjya',
+        'hero-founder-title': 'Vedic Astrologer & Vastu Consultant',
         'nav-about': 'About Acharjya',
         'nav-services': 'Services',
         'nav-courses': 'Courses',
@@ -1063,8 +1093,8 @@
         'trust-3-sub': 'M.A. (Bengali) & Multi-Shastra Scholar',
         'trust-4-title': 'Nationally Conferred',
         'trust-4-sub': 'Jyotish Padmasree Recipient',
-        'about-tag': 'FOUNDER & PRINCIPAL ACHARJYA',
-        'about-title': 'Biography of the Founder & Principal Acharjya',
+        'about-tag': 'FOUNDER & PRINCIPAL',
+        'about-title': 'Biography of the Founder & Principal',
         'about-subtitle': 'Bridging Bengali Literature with Vedic Shastras — 18 Years of Dedication & Spiritual Direction',
         'edu-heading': 'Education & Vedic Journey',
         'edu-text': 'After completing M.A. in Bengali with academic distinction, stepped into the sacred sphere of Vedic Astrology driven by deep spiritual devotion. Every prediction merges critical reasoning with authentic shastric calculation.',
@@ -1171,7 +1201,7 @@
         'foot-copy': '© 2025-2026 Graharchhana Jyotirbhavan (Astrology Education & Research Center). All Rights Reserved.',
         'mob-call': 'Call: 9679456634',
         'acharya-name': 'Soumendu Acharjya',
-        'acharya-title': 'PRINCIPAL ACHARJYA',
+        'acharya-title': 'Founder & Principal',
         'review-tag': 'CLIENTS FEEDBACK',
         'review-title': 'Devotees & Clients Feedback',
         'review-subtitle': 'Share your experience and see what others have to say',
